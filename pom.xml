@@ -35,6 +35,21 @@
                             <goal>single</goal>
                         </goals>
                     </execution>
+                    <execution>
+                        <id>build-calculatrice</id>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <mainClass>calculatrice.Calculatrice</mainClass>
+                                </manifest>
+                            </archive>
+                            <finalName>calculatrice</finalName>
+                        </configuration>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
                     <!-- WARNING : All the jars will have all classes, only the MANIFEST changes
                     to point the right main class... -->
                     <!-- For another jar : -->
