@@ -35,6 +35,8 @@
                             <goal>single</goal>
                         </goals>
                     </execution>
+                    <!-- WARNING : All the jars will have all classes, only the MANIFEST changes
+                    to point the right main class... -->
                     <!-- For another jar : -->
                     <!--<execution>
                         <id>build-something</id>
@@ -72,6 +74,4 @@
             <version>7.0.3</version>
         </dependency>
     </dependencies>
-
-
 </project>
