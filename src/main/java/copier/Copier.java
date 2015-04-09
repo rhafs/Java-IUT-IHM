@@ -13,6 +13,7 @@ public class Copier extends JFrame {
         this.setContentPane(new MainPanel(this).getMainPanel());
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.pack();
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
     public static void main(String[] args) {
