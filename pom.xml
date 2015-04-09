@@ -15,24 +15,42 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.5.3</version>
                 <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <mainClass>copier.Copier</mainClass>
-                        </manifest>
-                    </archive>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                 </configuration>
                 <executions>
                     <execution>
-                        <id>make-my-jar-with-dependencies</id>
+                        <id>build-copier</id>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <mainClass>copier.Copier</mainClass>
+                                </manifest>
+                            </archive>
+                            <finalName>copier</finalName>
+                        </configuration>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
                         </goals>
                     </execution>
+                    <!-- For another jar : -->
+                    <!--<execution>
+                        <id>build-something</id>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <mainClass>foo.bar.MainClass</mainClass>
+                                </manifest>
+                            </archive>
+                            <finalName>foobar_a</finalName>
+                        </configuration>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>-->
                 </executions>
             </plugin>
             <plugin>
