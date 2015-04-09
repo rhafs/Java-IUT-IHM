@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="copier.Copier">
-  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="copier.MainPanel">
+  <grid id="27dc6" binding="mainPanel" default-binding="true" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="612" height="400"/>
+      <xy x="20" y="20" width="630" height="402"/>
     </constraints>
     <properties>
       <visible value="true"/>
@@ -17,7 +17,7 @@
         <properties>
           <font name="Droid Sans" size="25"/>
           <icon value="hotel1.jpg"/>
-          <text value="HelloWorld"/>
+          <text value="Hôtel méridien"/>
         </properties>
       </component>
       <component id="269b2" class="javax.swing.JLabel">
@@ -26,6 +26,7 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="18" style="0"/>
+          <foreground color="-4507085"/>
           <text value="Entrer une chaîne : "/>
         </properties>
       </component>
@@ -36,6 +37,7 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-8867900"/>
           <font name="Droid Sans" size="18"/>
           <text value=""/>
         </properties>
@@ -46,7 +48,7 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="18"/>
-          <text value="Copier"/>
+          <text value="&amp;Copier"/>
         </properties>
       </component>
       <component id="fa2d4" class="javax.swing.JLabel">
@@ -55,16 +57,18 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="18" style="0"/>
+          <foreground color="-12436805"/>
           <text value="Voici la chaîne :"/>
         </properties>
       </component>
       <component id="6eb42" class="javax.swing.JTextField" binding="text2">
         <constraints>
-          <grid row="2" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
         <properties>
+          <background color="-2168772"/>
           <editable value="false"/>
           <focusable value="false"/>
           <font name="Droid Sans" size="18"/>
@@ -99,6 +103,15 @@
           </grid>
         </constraints>
       </vspacer>
+      <component id="85ce" class="javax.swing.JButton" binding="finButton">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Droid Sans" size="18"/>
+          <text value="&amp;Fin"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>
