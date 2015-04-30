@@ -32,7 +32,7 @@ public class MainPanel {
             opLabel.setText("+");
             readAndValidate();
             if (ok) {
-                resField.setText(Double.toString(op1 + op2));
+                resField.setText(String.format("%-9.2f", op1 + op2));
                 firstOpField.selectAll();
                 firstOpField.requestFocus();
             }
@@ -41,7 +41,7 @@ public class MainPanel {
             opLabel.setText("-");
             readAndValidate();
             if (ok) {
-                resField.setText(Double.toString(op1 - op2));
+                resField.setText(String.format("%-9.2f", op1 - op2));
                 firstOpField.selectAll();
                 firstOpField.requestFocus();
             }
@@ -50,7 +50,7 @@ public class MainPanel {
             opLabel.setText("x");
             readAndValidate();
             if (ok) {
-                resField.setText(Double.toString(op1 * op2));
+                resField.setText(String.format("%-9.2f", op1 * op2));
                 firstOpField.selectAll();
                 firstOpField.requestFocus();
             }
@@ -59,7 +59,7 @@ public class MainPanel {
             opLabel.setText("/");
             readAndValidate();
             if (ok) {
-                resField.setText(Double.toString(op1 / op2));
+                resField.setText(String.format("%-9.2f", op1 / op2));
                 firstOpField.selectAll();
                 firstOpField.requestFocus();
             }
