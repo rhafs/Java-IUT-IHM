@@ -58,7 +58,7 @@ public class MainPanel {
         mainPanel.setVisible(true);
         final JLabel label1 = new JLabel();
         label1.setFont(new Font("Droid Sans", label1.getFont().getStyle(), 25));
-        label1.setIcon(new ImageIcon(getClass().getResource("/hotel1.jpg")));
+        label1.setIcon(new ImageIcon(getClass().getResource("/copier/hotel1.jpg")));
         label1.setText("Hôtel méridien");
         mainPanel.add(label1, new GridConstraints(3, 1, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label2 = new JLabel();

@@ -16,7 +16,7 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="25"/>
-          <icon value="hotel1.jpg"/>
+          <icon value="copier/hotel1.jpg"/>
           <text value="Hôtel méridien"/>
         </properties>
       </component>
