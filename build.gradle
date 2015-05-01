@@ -77,6 +77,28 @@ task aleatoire(type: Jar) {
     }
 }
 
+task qcm(type: Jar) {
+    baseName = getName()
+    version = '1.0.0'
+    String className = baseName.capitalize()
+
+    from(sourceSets.main.output) {
+        include "$baseName/**"
+    }
+
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+
+    manifest {
+        attributes "Implementation-Title": "$className",
+                "Implementation-Version": "$version",
+                "Main-Class": "$baseName.$className"
+    }
+}
+
 artifacts {
-    archives calculatrice, copier, aleatoire
+    archives calculatrice, copier, aleatoire, qcm
 }
