@@ -1,17 +1,17 @@
-package calculatrice;
+package aleatoire;
 
 import javax.swing.*;
 
 /**
- * Created on 09/04/15.
+ * Created on 01/05/15.
  *
  * @author gaugendre
  */
-public class Calculatrice extends JFrame{
+public class Aleatoire extends JFrame {
     private JPanel mainPanel;
 
-    public Calculatrice() {
-        super("Calculatrice");
+    public Aleatoire() {
+        super("Génération automatique d'un entier aléatoire");
         this.mainPanel = new MainPanel(this).getMainPanel();
         this.setContentPane(mainPanel);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -27,6 +27,6 @@ public class Calculatrice extends JFrame{
         } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             e.printStackTrace(System.err);
         }
-        new Calculatrice();
+        new Aleatoire();
     }
 }

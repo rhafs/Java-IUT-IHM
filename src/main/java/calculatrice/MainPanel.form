@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="calculatrice.MainPanel">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="7" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="7" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="494" height="177"/>
@@ -32,9 +32,7 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties>
-          <nextFocusableComponent value="47344"/>
-        </properties>
+        <properties/>
       </component>
       <component id="47344" class="javax.swing.JTextField" binding="secOpField">
         <constraints>
@@ -42,9 +40,7 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties>
-          <nextFocusableComponent value="518f1"/>
-        </properties>
+        <properties/>
       </component>
       <component id="a5b0a" class="javax.swing.JLabel">
         <constraints>
@@ -63,55 +59,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
-          <focusable value="false"/>
-        </properties>
-      </component>
-      <component id="518f1" class="javax.swing.JButton" binding="addButton">
-        <constraints>
-          <grid row="1" column="3" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="30" height="30"/>
-          </grid>
-        </constraints>
-        <properties>
-          <font name="Droid Sans" size="18"/>
-          <nextFocusableComponent value="31b77"/>
-          <text value="+"/>
-        </properties>
-      </component>
-      <component id="31b77" class="javax.swing.JButton" binding="subButton">
-        <constraints>
-          <grid row="1" column="4" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="30" height="30"/>
-          </grid>
-        </constraints>
-        <properties>
-          <font name="Droid Sans" size="18"/>
-          <nextFocusableComponent value="d8efc"/>
-          <text value="-"/>
-        </properties>
-      </component>
-      <component id="28ab5" class="javax.swing.JButton" binding="divButton">
-        <constraints>
-          <grid row="1" column="6" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="30" height="30"/>
-          </grid>
-        </constraints>
-        <properties>
-          <font name="Droid Sans" size="18"/>
-          <nextFocusableComponent value="2d3e5"/>
-          <text value="/"/>
-        </properties>
-      </component>
-      <component id="d8efc" class="javax.swing.JButton" binding="mulButton">
-        <constraints>
-          <grid row="1" column="5" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="30" height="30"/>
-          </grid>
-        </constraints>
-        <properties>
-          <font name="Droid Sans" size="18"/>
-          <nextFocusableComponent value="28ab5"/>
-          <text value="x"/>
+          <focusable value="true"/>
         </properties>
       </component>
       <component id="4aef6" class="javax.swing.JLabel" binding="opLabel">
@@ -141,7 +89,7 @@
       </vspacer>
       <hspacer id="52c8">
         <constraints>
-          <grid row="3" column="7" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="5" height="-1"/>
           </grid>
         </constraints>
@@ -160,6 +108,50 @@
           </grid>
         </constraints>
       </hspacer>
+      <component id="518f1" class="javax.swing.JButton" binding="addButton">
+        <constraints>
+          <grid row="1" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="30" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Droid Sans" size="18"/>
+          <text value="+"/>
+        </properties>
+      </component>
+      <component id="31b77" class="javax.swing.JButton" binding="subButton">
+        <constraints>
+          <grid row="1" column="4" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="30" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Droid Sans" size="18"/>
+          <text value="-"/>
+        </properties>
+      </component>
+      <component id="d8efc" class="javax.swing.JButton" binding="mulButton">
+        <constraints>
+          <grid row="3" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="30" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Droid Sans" size="18"/>
+          <text value="x"/>
+        </properties>
+      </component>
+      <component id="28ab5" class="javax.swing.JButton" binding="divButton">
+        <constraints>
+          <grid row="3" column="4" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="30" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Droid Sans" size="18"/>
+          <text value="/"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>
