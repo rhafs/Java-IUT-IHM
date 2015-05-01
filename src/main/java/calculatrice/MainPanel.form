@@ -32,9 +32,7 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties>
-          <nextFocusableComponent value="47344"/>
-        </properties>
+        <properties/>
       </component>
       <component id="47344" class="javax.swing.JTextField" binding="secOpField">
         <constraints>
@@ -42,9 +40,7 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties>
-          <nextFocusableComponent value="518f1"/>
-        </properties>
+        <properties/>
       </component>
       <component id="a5b0a" class="javax.swing.JLabel">
         <constraints>
@@ -120,7 +116,6 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="18"/>
-          <nextFocusableComponent value="31b77"/>
           <text value="+"/>
         </properties>
       </component>
@@ -132,7 +127,6 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="18"/>
-          <nextFocusableComponent value="d8efc"/>
           <text value="-"/>
         </properties>
       </component>
@@ -144,7 +138,6 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="18"/>
-          <nextFocusableComponent value="28ab5"/>
           <text value="x"/>
         </properties>
       </component>
@@ -156,7 +149,6 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="18"/>
-          <nextFocusableComponent value="2d3e5"/>
           <text value="/"/>
         </properties>
       </component>

@@ -12,7 +12,7 @@ public class Calculatrice extends JFrame{
 
     public Calculatrice() {
         super("Calculatrice");
-        this.mainPanel = new MainPanel().getMainPanel();
+        this.mainPanel = new MainPanel(this).getMainPanel();
         this.setContentPane(mainPanel);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.pack();
