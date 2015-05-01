@@ -2,11 +2,12 @@ apply plugin: "java"
 
 class JarTask extends Jar {
     String jarName = "default"
-    String version = "1.0.0"
+    String jarVersion = "1.0.0"
 
     @TaskAction
     def jar() {
         baseName = jarName
+        version = jarVersion
         String className = baseName.capitalize()
 
         from(sourceSets.main.output) {
