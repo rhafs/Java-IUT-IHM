@@ -1,58 +1,38 @@
-apply plugin: "idea"
 apply plugin: "java"
 
-repositories {
-    mavenCentral()
-}
+class JarTask extends Jar {
+    String jarName = "default"
+    String version = "1.0.0"
 
-dependencies {
-    compile "com.intellij:forms_rt:7.0.3"
-    runtime "com.intellij:forms_rt:7.0.3"
-}
+    @TaskAction
+    def jar() {
+        baseName = jarName
+        String className = baseName.capitalize()
 
-task jarCalculatrice(type: Jar) {
-    baseName = "calculatrice"
-    String className = baseName.capitalize()
+        from(sourceSets.main.output) {
+            include "$baseName/**"
+            include "$baseName/**"
+        }
 
-    from(sourceSets.main.output) {
-        include "$baseName/**"
-    }
+        from {
+            configurations.compile.collect {
+                it.isDirectory() ? it : zipTree(it)
+            }
+        }
 
-    from {
-        configurations.compile.collect {
-            it.isDirectory() ? it : zipTree(it)
+        manifest {
+            attributes "Implementation-Title": "$className",
+                    "Implementation-Version": "$version",
+                    "Main-Class": "$baseName.$className"
         }
     }
-
-    manifest {
-        attributes "Implementation-Title": "$className",
-                "Implementation-Version": "1.0.0",
-                "Main-Class": "$baseName.$className"
-    }
 }
 
-task jarCopier(type: Jar) {
-    baseName = "copier"
-    String className = baseName.capitalize()
-
-    from(sourceSets.main.output) {
-        include "$baseName/**"
-        include "hotel1.jpg"
-    }
-
-    from {
-        configurations.compile.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
-    }
-
-    manifest {
-        attributes "Implementation-Title": "$className",
-                "Implementation-Version": "1.0.0",
-                "Main-Class": "$baseName.$className"
-    }
+task jarCalculatrice(type: JarTask) {
+    jarName = "calculatrice"
 }
 
-artifacts {
-    archives jarCalculatrice, jarCopier
+task jarCopier(type: JarTask) {
+    jarName = "copier"
+    version = "1.2.42"
 }
