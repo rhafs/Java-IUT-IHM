@@ -39,7 +39,6 @@ task copier(type: Jar) {
 
     from(sourceSets.main.output) {
         include "$baseName/**"
-        include "hotel1.jpg"
     }
 
     from {
