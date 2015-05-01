@@ -6,8 +6,6 @@ import com.intellij.uiDesigner.core.Spacer;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Created on 01/05/15.
@@ -27,22 +25,16 @@ public class MainPanel {
 
     public MainPanel(JFrame container) {
         this.container = container;
-        okButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (first.isSelected() && second.isSelected()) {
-                    JOptionPane.showMessageDialog(container, "Bravo !", "Verdict", JOptionPane.PLAIN_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(container, "Réponse incorrecte...", "Verdict", JOptionPane.ERROR_MESSAGE);
-                }
+        okButton.addActionListener(e -> {
+            if (first.isSelected() && second.isSelected()) {
+                JOptionPane.showMessageDialog(container, "Bravo !", "Verdict", JOptionPane.PLAIN_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(container, "Réponse incorrecte...", "Verdict", JOptionPane.ERROR_MESSAGE);
             }
         });
-        finButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                container.dispose();
-                System.exit(0);
-            }
+        finButton.addActionListener(e -> {
+            container.dispose();
+            System.exit(0);
         });
 
         questions.setBorder(BorderFactory.createTitledBorder(container.getTitle()));
