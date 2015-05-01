@@ -1,7 +1,7 @@
 apply plugin: "java"
 
 class JarTask extends Jar {
-    String jarName = "default"
+    String jarName = getName()
     String jarVersion = "1.0.0"
 
     @TaskAction
@@ -29,11 +29,8 @@ class JarTask extends Jar {
     }
 }
 
-task jarCalculatrice(type: JarTask) {
-    jarName = "calculatrice"
-}
+task jarCalculatrice(type: JarTask)
 
 task jarCopier(type: JarTask) {
-    jarName = "copier"
-    version = "1.2.42"
+    jarVersion = "1.2.42"
 }
