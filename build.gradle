@@ -29,8 +29,8 @@ class JarTask extends Jar {
     }
 }
 
-task jarCalculatrice(type: JarTask)
+task calculatrice(type: JarTask)
 
-task jarCopier(type: JarTask) {
+task copier(type: JarTask) {
     jarVersion = "1.2.42"
 }
