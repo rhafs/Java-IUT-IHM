@@ -12,7 +12,6 @@ class JarTask extends Jar {
 
         from(sourceSets.main.output) {
             include "$baseName/**"
-            include "$baseName/**"
         }
 
         from {
