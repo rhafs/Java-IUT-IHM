@@ -10,8 +10,9 @@ dependencies {
     runtime "com.intellij:forms_rt:7.0.3"
 }
 
-task jarCalculatrice(type: Jar) {
-    baseName = "calculatrice"
+task calculatrice(type: Jar) {
+    baseName = getName()
+    version = '1.0.0'
     String className = baseName.capitalize()
 
     from(sourceSets.main.output) {
@@ -26,13 +27,14 @@ task jarCalculatrice(type: Jar) {
 
     manifest {
         attributes "Implementation-Title": "$className",
-                "Implementation-Version": "1.0.0",
+                "Implementation-Version": "$version",
                 "Main-Class": "$baseName.$className"
     }
 }
 
-task jarCopier(type: Jar) {
-    baseName = "copier"
+task copier(type: Jar) {
+    baseName = getName()
+    version = '1.0.0'
     String className = baseName.capitalize()
 
     from(sourceSets.main.output) {
@@ -48,11 +50,11 @@ task jarCopier(type: Jar) {
 
     manifest {
         attributes "Implementation-Title": "$className",
-                "Implementation-Version": "1.0.0",
+                "Implementation-Version": "$version",
                 "Main-Class": "$baseName.$className"
     }
 }
 
 artifacts {
-    archives jarCalculatrice, jarCopier
+    archives calculatrice, copier
 }
