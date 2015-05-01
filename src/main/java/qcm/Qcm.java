@@ -7,10 +7,10 @@ import javax.swing.*;
  *
  * @author gaugendre
  */
-public class QCM extends JFrame {
+public class Qcm extends JFrame {
     private JPanel mainPanel;
 
-    public QCM() {
+    public Qcm() {
         super("QCM");
         this.mainPanel = new MainPanel(this).getMainPanel();
         this.setContentPane(mainPanel);
@@ -27,6 +27,6 @@ public class QCM extends JFrame {
         } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             e.printStackTrace(System.err);
         }
-        new QCM();
+        new Qcm();
     }
 }
