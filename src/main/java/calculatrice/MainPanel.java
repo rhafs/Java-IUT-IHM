@@ -7,6 +7,7 @@ import com.intellij.uiDesigner.core.Spacer;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 /**
  * Created on 09/04/15.
@@ -32,24 +33,9 @@ public class MainPanel {
         this.container = container;
         container.setFocusTraversalPolicy(new CalculatriceFocusTraversalPolicy());
         addButton.addActionListener(new AdditionAction(this));
-        subButton.addActionListener(e -> {
-            opLabel.setText("-");
-            readAndValidate();
-            if (ok)
-                setResult(op1 - op2);
-        });
-        mulButton.addActionListener(e -> {
-            opLabel.setText("x");
-            readAndValidate();
-            if (ok)
-                setResult(op1 * op2);
-        });
-        divButton.addActionListener(e -> {
-            opLabel.setText("/");
-            readAndValidate();
-            if (ok)
-                setResult(op1 / op2);
-        });
+        subButton.addActionListener(new SubstractionAction(this));
+        mulButton.addActionListener(new MultiplicationAction(this));
+        divButton.addActionListener(new DivideAction(this));
     }
 
     public void readAndValidate() {
@@ -132,11 +118,11 @@ public class MainPanel {
         mainPanel.setLayout(new GridLayoutManager(7, 6, new Insets(0, 0, 0, 0), -1, -1));
         final JLabel label1 = new JLabel();
         label1.setFont(new Font("Droid Sans", label1.getFont().getStyle(), 18));
-        label1.setText("Opérande 1");
+        this.$$$loadLabelText$$$(label1, ResourceBundle.getBundle("calculatrice/Calculatrice").getString("label.op1"));
         mainPanel.add(label1, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label2 = new JLabel();
         label2.setFont(new Font("Droid Sans", label2.getFont().getStyle(), 18));
-        label2.setText("Opérande 2");
+        this.$$$loadLabelText$$$(label2, ResourceBundle.getBundle("calculatrice/Calculatrice").getString("label.op2"));
         mainPanel.add(label2, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         firstOpField = new JTextField();
         mainPanel.add(firstOpField, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
@@ -144,7 +130,7 @@ public class MainPanel {
         mainPanel.add(secOpField, new GridConstraints(3, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JLabel label3 = new JLabel();
         label3.setFont(new Font("Droid Sans", label3.getFont().getStyle(), 18));
-        label3.setText("Résultat");
+        this.$$$loadLabelText$$$(label3, ResourceBundle.getBundle("calculatrice/Calculatrice").getString("label.result"));
         mainPanel.add(label3, new GridConstraints(5, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         resField = new JTextField();
         resField.setEditable(false);
@@ -182,6 +168,33 @@ public class MainPanel {
         divButton.setFont(new Font("Droid Sans", divButton.getFont().getStyle(), 18));
         divButton.setText("/");
         mainPanel.add(divButton, new GridConstraints(3, 4, 2, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, 30), null, 0, false));
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    private void $$$loadLabelText$$$(JLabel component, String text) {
+        StringBuffer result = new StringBuffer();
+        boolean haveMnemonic = false;
+        char mnemonic = '\0';
+        int mnemonicIndex = -1;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == '&') {
+                i++;
+                if (i == text.length()) break;
+                if (!haveMnemonic && text.charAt(i) != '&') {
+                    haveMnemonic = true;
+                    mnemonic = text.charAt(i);
+                    mnemonicIndex = result.length();
+                }
+            }
+            result.append(text.charAt(i));
+        }
+        component.setText(result.toString());
+        if (haveMnemonic) {
+            component.setDisplayedMnemonic(mnemonic);
+            component.setDisplayedMnemonicIndex(mnemonicIndex);
+        }
     }
 
     /**
