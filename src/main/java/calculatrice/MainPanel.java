@@ -6,6 +6,7 @@ import com.intellij.uiDesigner.core.Spacer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * Created on 09/04/15.
@@ -30,12 +31,7 @@ public class MainPanel {
     public MainPanel(JFrame container) {
         this.container = container;
         container.setFocusTraversalPolicy(new CalculatriceFocusTraversalPolicy());
-        addButton.addActionListener(e -> {
-            opLabel.setText("+");
-            readAndValidate();
-            if (ok)
-                setResult(op1 + op2);
-        });
+        addButton.addActionListener(new AdditionAction(this));
         subButton.addActionListener(e -> {
             opLabel.setText("-");
             readAndValidate();
@@ -89,6 +85,32 @@ public class MainPanel {
 
     public JPanel getMainPanel() {
         return mainPanel;
+    }
+
+    public boolean setOpLabel(String newOp) {
+        ArrayList<String> opList = new ArrayList<>(4);
+        opList.add("+");
+        opList.add("-");
+        opList.add("x");
+        opList.add("/");
+        if (opList.contains(newOp)) {
+            opLabel.setText(newOp);
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean isOk() {
+        return ok;
+    }
+
+    public double getOp1() {
+        return op1;
+    }
+
+    public double getOp2() {
+        return op2;
     }
 
     {
