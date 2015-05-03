@@ -6,6 +6,7 @@ import com.intellij.uiDesigner.core.Spacer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ResourceBundle;
 
 /**
  * Created on 07/04/15.
@@ -18,20 +19,21 @@ public class MainPanel {
     private JButton copierButton;
     private JTextField text2;
     private JButton finButton;
-    private JFrame belongingFrame;
+    private JFrame container;
+    private Action copyText;
+    private Action closeWindow;
 
-    public MainPanel(JFrame belongingFrame) {
-        this.belongingFrame = belongingFrame;
-        copierButton.addActionListener(e -> text2.setText(text1.getText()));
+    public MainPanel(JFrame container) {
+        this.container = container;
+        this.copyText = new CopyTextAction(text1, text2);
+        this.closeWindow = new CloseWindowAction(container);
+        copierButton.addActionListener(copyText);
         copierButton.addMouseWheelListener(e -> {
             Font f = copierButton.getFont();
             f = new Font(f.getFontName(), f.getStyle(), f.getSize() - e.getWheelRotation());
             copierButton.setFont(f);
         });
-        finButton.addActionListener(e -> {
-            belongingFrame.dispose();
-            System.exit(0);
-        });
+        finButton.addActionListener(closeWindow);
     }
 
     public JPanel getMainPanel() {
@@ -59,12 +61,12 @@ public class MainPanel {
         final JLabel label1 = new JLabel();
         label1.setFont(new Font("Droid Sans", label1.getFont().getStyle(), 25));
         label1.setIcon(new ImageIcon(getClass().getResource("/copier/hotel1.jpg")));
-        label1.setText("Hôtel méridien");
+        this.$$$loadLabelText$$$(label1, ResourceBundle.getBundle("copier/Copier").getString("hotel"));
         mainPanel.add(label1, new GridConstraints(3, 1, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label2 = new JLabel();
         label2.setFont(new Font("Droid Sans", Font.PLAIN, 18));
         label2.setForeground(new Color(-4507085));
-        label2.setText("Entrer une chaîne : ");
+        this.$$$loadLabelText$$$(label2, ResourceBundle.getBundle("copier/Copier").getString("input_label"));
         mainPanel.add(label2, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         text1 = new JTextField();
         text1.setBackground(new Color(-8867900));
@@ -73,14 +75,12 @@ public class MainPanel {
         mainPanel.add(text1, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         copierButton = new JButton();
         copierButton.setFont(new Font("Droid Sans", copierButton.getFont().getStyle(), 18));
-        copierButton.setText("Copier");
-        copierButton.setMnemonic('C');
-        copierButton.setDisplayedMnemonicIndex(0);
+        this.$$$loadButtonText$$$(copierButton, ResourceBundle.getBundle("copier/Copier").getString("copy"));
         mainPanel.add(copierButton, new GridConstraints(1, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label3 = new JLabel();
         label3.setFont(new Font("Droid Sans", Font.PLAIN, 18));
         label3.setForeground(new Color(-12436805));
-        label3.setText("Voici la chaîne :");
+        this.$$$loadLabelText$$$(label3, ResourceBundle.getBundle("copier/Copier").getString("output_label"));
         mainPanel.add(label3, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         text2 = new JTextField();
         text2.setBackground(new Color(-2168772));
@@ -99,10 +99,62 @@ public class MainPanel {
         mainPanel.add(spacer4, new GridConstraints(4, 1, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(-1, 5), null, 0, false));
         finButton = new JButton();
         finButton.setFont(new Font("Droid Sans", finButton.getFont().getStyle(), 18));
-        finButton.setText("Fin");
-        finButton.setMnemonic('F');
-        finButton.setDisplayedMnemonicIndex(0);
+        this.$$$loadButtonText$$$(finButton, ResourceBundle.getBundle("copier/Copier").getString("end"));
         mainPanel.add(finButton, new GridConstraints(2, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    private void $$$loadLabelText$$$(JLabel component, String text) {
+        StringBuffer result = new StringBuffer();
+        boolean haveMnemonic = false;
+        char mnemonic = '\0';
+        int mnemonicIndex = -1;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == '&') {
+                i++;
+                if (i == text.length()) break;
+                if (!haveMnemonic && text.charAt(i) != '&') {
+                    haveMnemonic = true;
+                    mnemonic = text.charAt(i);
+                    mnemonicIndex = result.length();
+                }
+            }
+            result.append(text.charAt(i));
+        }
+        component.setText(result.toString());
+        if (haveMnemonic) {
+            component.setDisplayedMnemonic(mnemonic);
+            component.setDisplayedMnemonicIndex(mnemonicIndex);
+        }
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    private void $$$loadButtonText$$$(AbstractButton component, String text) {
+        StringBuffer result = new StringBuffer();
+        boolean haveMnemonic = false;
+        char mnemonic = '\0';
+        int mnemonicIndex = -1;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == '&') {
+                i++;
+                if (i == text.length()) break;
+                if (!haveMnemonic && text.charAt(i) != '&') {
+                    haveMnemonic = true;
+                    mnemonic = text.charAt(i);
+                    mnemonicIndex = result.length();
+                }
+            }
+            result.append(text.charAt(i));
+        }
+        component.setText(result.toString());
+        if (haveMnemonic) {
+            component.setMnemonic(mnemonic);
+            component.setDisplayedMnemonicIndex(mnemonicIndex);
+        }
     }
 
     /**
