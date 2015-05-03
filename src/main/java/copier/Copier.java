@@ -1,6 +1,7 @@
 package copier;
 
 import javax.swing.*;
+import java.util.ResourceBundle;
 
 /**
  * Created on 09/04/15.
@@ -9,7 +10,7 @@ import javax.swing.*;
  */
 public class Copier extends JFrame {
     public Copier() {
-        super("Copier");
+        super(ResourceBundle.getBundle("copier/Copier").getString("plain.title"));
         this.setContentPane(new MainPanel(this).getMainPanel());
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.pack();

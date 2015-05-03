@@ -2,6 +2,7 @@ package copier;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.util.ResourceBundle;
 
 /**
  * Created on 03/05/15.
@@ -12,7 +13,7 @@ public class CloseWindowAction extends AbstractAction {
     private JFrame frame;
 
     public CloseWindowAction(JFrame frame) {
-        super("Fin");
+        super(ResourceBundle.getBundle("copier/Copier").getString("plain.end"));
         this.frame = frame;
     }
 

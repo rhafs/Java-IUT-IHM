@@ -61,12 +61,12 @@ public class MainPanel {
         final JLabel label1 = new JLabel();
         label1.setFont(new Font("Droid Sans", label1.getFont().getStyle(), 25));
         label1.setIcon(new ImageIcon(getClass().getResource("/copier/hotel1.jpg")));
-        this.$$$loadLabelText$$$(label1, ResourceBundle.getBundle("copier/Copier").getString("hotel"));
+        this.$$$loadLabelText$$$(label1, ResourceBundle.getBundle("copier/Copier").getString("label.hotel"));
         mainPanel.add(label1, new GridConstraints(3, 1, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label2 = new JLabel();
         label2.setFont(new Font("Droid Sans", Font.PLAIN, 18));
         label2.setForeground(new Color(-4507085));
-        this.$$$loadLabelText$$$(label2, ResourceBundle.getBundle("copier/Copier").getString("input_label"));
+        this.$$$loadLabelText$$$(label2, ResourceBundle.getBundle("copier/Copier").getString("label.input"));
         mainPanel.add(label2, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         text1 = new JTextField();
         text1.setBackground(new Color(-8867900));
@@ -75,12 +75,12 @@ public class MainPanel {
         mainPanel.add(text1, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         copierButton = new JButton();
         copierButton.setFont(new Font("Droid Sans", copierButton.getFont().getStyle(), 18));
-        this.$$$loadButtonText$$$(copierButton, ResourceBundle.getBundle("copier/Copier").getString("copy"));
+        this.$$$loadButtonText$$$(copierButton, ResourceBundle.getBundle("copier/Copier").getString("button.copy"));
         mainPanel.add(copierButton, new GridConstraints(1, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label3 = new JLabel();
         label3.setFont(new Font("Droid Sans", Font.PLAIN, 18));
         label3.setForeground(new Color(-12436805));
-        this.$$$loadLabelText$$$(label3, ResourceBundle.getBundle("copier/Copier").getString("output_label"));
+        this.$$$loadLabelText$$$(label3, ResourceBundle.getBundle("copier/Copier").getString("label.output"));
         mainPanel.add(label3, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         text2 = new JTextField();
         text2.setBackground(new Color(-2168772));
@@ -99,7 +99,7 @@ public class MainPanel {
         mainPanel.add(spacer4, new GridConstraints(4, 1, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(-1, 5), null, 0, false));
         finButton = new JButton();
         finButton.setFont(new Font("Droid Sans", finButton.getFont().getStyle(), 18));
-        this.$$$loadButtonText$$$(finButton, ResourceBundle.getBundle("copier/Copier").getString("end"));
+        this.$$$loadButtonText$$$(finButton, ResourceBundle.getBundle("copier/Copier").getString("button.end"));
         mainPanel.add(finButton, new GridConstraints(2, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 

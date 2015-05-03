@@ -17,7 +17,7 @@
         <properties>
           <font name="Droid Sans" size="25"/>
           <icon value="copier/hotel1.jpg"/>
-          <text resource-bundle="copier/Copier" key="hotel"/>
+          <text resource-bundle="copier/Copier" key="label.hotel"/>
         </properties>
       </component>
       <component id="269b2" class="javax.swing.JLabel">
@@ -27,7 +27,7 @@
         <properties>
           <font name="Droid Sans" size="18" style="0"/>
           <foreground color="-4507085"/>
-          <text resource-bundle="copier/Copier" key="input_label"/>
+          <text resource-bundle="copier/Copier" key="label.input"/>
         </properties>
       </component>
       <component id="ef084" class="javax.swing.JTextField" binding="text1">
@@ -48,7 +48,7 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="18"/>
-          <text resource-bundle="copier/Copier" key="copy"/>
+          <text resource-bundle="copier/Copier" key="button.copy"/>
         </properties>
       </component>
       <component id="fa2d4" class="javax.swing.JLabel">
@@ -58,7 +58,7 @@
         <properties>
           <font name="Droid Sans" size="18" style="0"/>
           <foreground color="-12436805"/>
-          <text resource-bundle="copier/Copier" key="output_label"/>
+          <text resource-bundle="copier/Copier" key="label.output"/>
         </properties>
       </component>
       <component id="6eb42" class="javax.swing.JTextField" binding="text2">
@@ -109,7 +109,7 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="18"/>
-          <text resource-bundle="copier/Copier" key="end"/>
+          <text resource-bundle="copier/Copier" key="button.end"/>
         </properties>
       </component>
     </children>
