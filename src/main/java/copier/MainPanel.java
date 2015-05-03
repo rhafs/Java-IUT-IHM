@@ -6,6 +6,7 @@ import com.intellij.uiDesigner.core.Spacer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseWheelListener;
 import java.util.ResourceBundle;
 
 /**
@@ -22,17 +23,15 @@ public class MainPanel {
     private JFrame container;
     private Action copyText;
     private Action closeWindow;
+    private MouseWheelListener changeFontSize;
 
     public MainPanel(JFrame container) {
         this.container = container;
         this.copyText = new CopyTextAction(text1, text2);
         this.closeWindow = new CloseWindowAction(container);
+        this.changeFontSize = new ChangeFontSizeAction(copierButton);
         copierButton.addActionListener(copyText);
-        copierButton.addMouseWheelListener(e -> {
-            Font f = copierButton.getFont();
-            f = new Font(f.getFontName(), f.getStyle(), f.getSize() - e.getWheelRotation());
-            copierButton.setFont(f);
-        });
+        copierButton.addMouseWheelListener(changeFontSize);
         finButton.addActionListener(closeWindow);
     }
 
