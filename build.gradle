@@ -10,7 +10,7 @@ class JarTask extends Jar {
         version = jarVersion
         String className = baseName.capitalize()
 
-        from(sourceSets.main.output) {
+        from(project.sourceSets.main.output) {
             include "$baseName/**"
         }
 
