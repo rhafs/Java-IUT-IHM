@@ -1,8 +1,8 @@
 package saisie_au_vol;
 
-import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.ResourceBundle;
 
 /**
  * Created on 04/05/15.
@@ -10,10 +10,12 @@ import java.awt.event.KeyEvent;
  * @author gaugendre
  */
 public class FieldValidation extends KeyAdapter {
-    private JTextField field;
+    private ResourceBundle bundle;
+    private MainPanel mainPanel;
 
-    public FieldValidation(JTextField field) {
-        this.field = field;
+    public FieldValidation(MainPanel mainPanel) {
+        this.mainPanel = mainPanel;
+        this.bundle = ResourceBundle.getBundle("saisie_au_vol/SaisieAuVol");
     }
 
     @Override
@@ -21,9 +23,14 @@ public class FieldValidation extends KeyAdapter {
         char c = e.getKeyChar();
 
         if (c == KeyEvent.VK_ESCAPE) {
-            field.setText("");
-        } else if (!Character.isDigit(c)) {
-            e.consume();
+            mainPanel.emptyField();
+        } else if (Character.isDigit(c)) {
+            mainPanel.setMessageText(bundle.getString("label.is_digit"));
+        } else if (Character.isLetter(c)) {
+            mainPanel.setMessageText(bundle.getString("label.is_letter"));
+        } else {
+            mainPanel.setMessageText(bundle.getString("label.no_digit_nor_letter"));
         }
+        mainPanel.packFrame();
     }
 }

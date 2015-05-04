@@ -17,16 +17,29 @@ public class MainPanel {
     private JPanel mainPanel;
     private JFrame container;
     private JTextField enterAValueTextField;
+    private JLabel validationMessage;
     private FieldValidation fieldValidation;
 
     public MainPanel(JFrame container) {
         this.container = container;
-        this.fieldValidation = new FieldValidation(enterAValueTextField);
+        this.fieldValidation = new FieldValidation(this);
         enterAValueTextField.addKeyListener(fieldValidation);
     }
 
     public JPanel getMainPanel() {
         return mainPanel;
+    }
+
+    public void emptyField() {
+        enterAValueTextField.setText("");
+    }
+
+    public void setMessageText(String message) {
+        validationMessage.setText(message);
+    }
+
+    public void packFrame() {
+        container.pack();
     }
 
     {
@@ -45,9 +58,9 @@ public class MainPanel {
      */
     private void $$$setupUI$$$() {
         mainPanel = new JPanel();
-        mainPanel.setLayout(new GridLayoutManager(3, 4, new Insets(0, 0, 0, 0), -1, -1));
+        mainPanel.setLayout(new GridLayoutManager(4, 4, new Insets(0, 0, 0, 0), -1, -1));
         final JLabel label1 = new JLabel();
-        this.$$$loadLabelText$$$(label1, ResourceBundle.getBundle("saisie_au_vol/SaisieAuVol").getString("enter_value"));
+        this.$$$loadLabelText$$$(label1, ResourceBundle.getBundle("saisie_au_vol/SaisieAuVol").getString("label.enter_value"));
         mainPanel.add(label1, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         enterAValueTextField = new JTextField();
         mainPanel.add(enterAValueTextField, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
@@ -58,7 +71,10 @@ public class MainPanel {
         final Spacer spacer3 = new Spacer();
         mainPanel.add(spacer3, new GridConstraints(0, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(-1, 10), null, 0, false));
         final Spacer spacer4 = new Spacer();
-        mainPanel.add(spacer4, new GridConstraints(2, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(-1, 10), null, 0, false));
+        mainPanel.add(spacer4, new GridConstraints(3, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(-1, 10), null, 0, false));
+        validationMessage = new JLabel();
+        validationMessage.setText("");
+        mainPanel.add(validationMessage, new GridConstraints(2, 1, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         label1.setLabelFor(enterAValueTextField);
     }
 
