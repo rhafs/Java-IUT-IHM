@@ -20,7 +20,9 @@ public class ChangeFontSizeAction implements MouseWheelListener {
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         Font f = button.getFont();
-        f = new Font(f.getFontName(), f.getStyle(), f.getSize() - e.getWheelRotation());
+        int newSize = f.getSize() - e.getWheelRotation();
+        newSize = newSize <= 0 ? 0 : newSize;
+        f = new Font(f.getFontName(), f.getStyle(), newSize);
         button.setFont(f);
     }
 }
