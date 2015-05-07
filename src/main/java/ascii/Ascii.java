@@ -1,7 +1,6 @@
 package ascii;
 
 import javax.swing.*;
-import java.util.ResourceBundle;
 
 /**
  * Created on 07/05/15.
@@ -10,7 +9,7 @@ import java.util.ResourceBundle;
  */
 public class Ascii extends JFrame {
     public Ascii() {
-        super(ResourceBundle.getBundle("copier/Copier").getString("plain.title"));
+        super("Affichage rang décimaux ASCII");
         this.setContentPane(new MainPanel(this).getMainPanel());
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.pack();
