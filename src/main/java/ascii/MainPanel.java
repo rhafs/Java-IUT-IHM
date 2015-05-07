@@ -38,7 +38,7 @@ public class MainPanel {
                     listModel.clear();
                 }
                 StringBuilder line = new StringBuilder();
-                line.append(c);
+                line.append(c < 33 ? '.' : c);
                 line.append("               ");
                 line.append(String.format("%03d", (int) (c)));
                 line.append("                   ");
