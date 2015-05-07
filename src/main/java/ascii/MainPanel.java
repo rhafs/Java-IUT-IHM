@@ -34,6 +34,9 @@ public class MainPanel {
                     container.dispose();
                     System.exit(0);
                 }
+                if (listModel.size() == 10) {
+                    listModel.clear();
+                }
                 StringBuilder line = new StringBuilder();
                 line.append(c);
                 line.append("               ");
