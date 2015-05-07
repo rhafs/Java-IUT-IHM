@@ -1,7 +1,6 @@
 package listage;
 
 import javax.swing.*;
-import java.util.ResourceBundle;
 
 /**
  * Created on 07/05/15.
@@ -10,7 +9,7 @@ import java.util.ResourceBundle;
  */
 public class Listage extends JFrame {
     public Listage() {
-        super(ResourceBundle.getBundle("copier/Copier").getString("plain.title"));
+        super("Listage");
         this.setContentPane(new MainPanel(this).getMainPanel());
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.pack();
