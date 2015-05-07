@@ -120,6 +120,28 @@ task saisie_au_vol(type: Jar) {
     }
 }
 
+task listage(type: Jar) {
+    baseName = getName()
+    version = '1.0.0'
+    String className = baseName.capitalize()
+
+    from(sourceSets.main.output) {
+        include "$baseName/**"
+    }
+
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+
+    manifest {
+        attributes "Implementation-Title": "$className",
+                "Implementation-Version": "$version",
+                "Main-Class": "$baseName.$className"
+    }
+}
+
 artifacts {
-    archives calculatrice, copier, aleatoire, qcm, saisie_au_vol
+    archives calculatrice, copier, aleatoire, qcm, saisie_au_vol, listageependn
 }
