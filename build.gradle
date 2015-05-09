@@ -1,34 +1,41 @@
+apply plugin: "idea"
 apply plugin: "java"
 
-class JarTask extends Jar {
-    String jarName = getName()
-    String jarVersion = "1.0.0"
+repositories {
+    mavenCentral()
+}
 
-    @TaskAction
-    def jar() {
-        baseName = jarName
-        version = jarVersion
-        String className = baseName.capitalize()
+dependencies {
+    compile "com.intellij:forms_rt:7.0.3"
+    runtime "com.intellij:forms_rt:7.0.3"
+}
 
-        from(project.sourceSets.main.output) {
-            include "$baseName/**"
-        }
+tasks.addRule('Pattern: build<ID>') { String taskName ->
+    if (taskName.startsWith('build')) {
+        task(taskName, type: Jar) {
+            baseName = taskName - 'build'
+            version = '1.0.0'
+            String className = baseName.capitalize()
 
-        from {
-            configurations.compile.collect {
-                it.isDirectory() ? it : zipTree(it)
+            from(sourceSets.main.output) {
+                include "$baseName/**"
             }
-        }
 
-        manifest {
-            attributes "Implementation-Title": "$className",
-                    "Implementation-Version": "$version",
-                    "Main-Class": "$baseName.$className"
+            from {
+                configurations.compile.collect {
+                    it.isDirectory() ? it : zipTree(it)
+                }
+            }
+
+            manifest {
+                attributes "Implementation-Title": "$className",
+                        "Implementation-Version": "$version",
+                        "Main-Class": "$baseName.$className"
+            }
         }
     }
 }
 
-task calculatrice(type: JarTask)
-task copier(type: JarTask)
-task aleatoire(type: JarTask)
-task qcm(type: JarTask)
+artifacts {
+    archives buildaleatoire, buildcalculatrice, buildcopier, buildqcm
+}
