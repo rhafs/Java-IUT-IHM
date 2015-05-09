@@ -143,5 +143,5 @@ task listage(type: Jar) {
 }
 
 artifacts {
-    archives calculatrice, copier, aleatoire, qcm, saisie_au_vol, listageependn
+    archives calculatrice, copier, aleatoire, qcm, saisie_au_vol, listage
 }
