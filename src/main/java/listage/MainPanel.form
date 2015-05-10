@@ -53,7 +53,7 @@
             <properties/>
             <border type="none" title="Bonjour"/>
             <children>
-              <component id="b7eb4" class="javax.swing.JList" binding="list1" default-binding="true">
+              <component id="b7eb4" class="javax.swing.JList" binding="numList">
                 <constraints/>
                 <properties>
                   <font name="Monospaced" size="16"/>

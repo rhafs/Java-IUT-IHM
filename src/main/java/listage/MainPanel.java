@@ -16,7 +16,7 @@ import java.util.Collections;
  */
 public class MainPanel {
     private JPanel mainPanel;
-    private JList list1;
+    private JList<Object> numList;
     private JTextField output;
     private JTextField input;
     private JFrame container;
@@ -30,7 +30,7 @@ public class MainPanel {
         this.container = container;
         this.listModel = new ArrayList<>();
 
-        /*list1.setModel(listModel);
+        /*numList.setModel(listModel);
         String[] listeFruits = {"pomme", "kiwi", "poire", "ananas"};
         for (String fruit : listeFruits) {
             listModel.addElement(fruit);
@@ -42,17 +42,17 @@ public class MainPanel {
 
         Collections.sort(listModel);
 
-        list1.setListData(listModel.toArray());
-        list1.setSelectedIndex(0);
-        list1.addListSelectionListener(e -> {
-            if (!list1.isSelectionEmpty()) {
-                output.setText(list1.getSelectedValue().toString());
+        numList.setListData(listModel.toArray());
+        numList.setSelectedIndex(0);
+        numList.addListSelectionListener(e -> {
+            if (!numList.isSelectionEmpty()) {
+                output.setText(numList.getSelectedValue().toString());
             }
         });
         input.addActionListener(e -> {
             listModel.add(Integer.parseInt(input.getText()));
             Collections.sort(listModel);
-            list1.setListData(listModel.toArray());
+            numList.setListData(listModel.toArray());
             input.setText("");
         });
     }
@@ -100,10 +100,10 @@ public class MainPanel {
         final JScrollPane scrollPane1 = new JScrollPane();
         panel1.add(scrollPane1, new GridConstraints(1, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(300, -1), null, 0, false));
         scrollPane1.setBorder(BorderFactory.createTitledBorder("Bonjour"));
-        list1 = new JList();
-        list1.setFont(new Font("Monospaced", list1.getFont().getStyle(), 16));
-        list1.setSelectionMode(0);
-        scrollPane1.setViewportView(list1);
+        numList = new JList();
+        numList.setFont(new Font("Monospaced", numList.getFont().getStyle(), 16));
+        numList.setSelectionMode(0);
+        scrollPane1.setViewportView(numList);
         output = new JTextField();
         panel1.add(output, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JLabel label1 = new JLabel();
