@@ -15,21 +15,21 @@ import java.awt.*;
 public class MainPanel {
     private JPanel mainPanel;
     private JFrame container;
-    private JComboBox ramComboBox;
-    private JComboBox hddComboBox;
-    private JComboBox screenComboBox;
-    private JComboBox opticalComboBox;
-    private JComboBox burnerComboBox;
+    private JComboBox<String> ramComboBox;
+    private JComboBox<String> hddComboBox;
+    private JComboBox<String> screenComboBox;
+    private JComboBox<String> opticalComboBox;
+    private JComboBox<String> burnerComboBox;
     private JRadioButton intelRadio;
     private JRadioButton amdRadio;
     private JPanel cpuPanel;
     private JButton lancerButton;
     private JPanel componentsPanel;
-    private String[] ramList = {"2G", "4G", "8G", "16G"};
-    private String[] hddList = {"500G", "750G", "1T", "2T", "4T"};
-    private String[] screenList = {"15\"", "17\"", "18\"", "20\""};
-    private String[] opticalList = {"Bluray", "CD", "DVD"};
-    private String[] burnerList = {"Bluray", "CD", "DVD"};
+    private final static String[] RAM_LIST = {"2G", "4G", "8G", "16G"};
+    private final static String[] HDD_LIST = {"500G", "750G", "1T", "2T", "4T"};
+    private final static String[] SCREEN_LIST = {"15\"", "17\"", "18\"", "20\""};
+    private final static String[] OPTICAL_LIST = {"Bluray", "CD", "DVD"};
+    private final static String[] BURNER_LIST = {"Bluray", "CD", "DVD"};
 
     public MainPanel(JFrame container) {
         this.container = container;
@@ -49,15 +49,15 @@ public class MainPanel {
             builder.append(burnerComboBox.getSelectedItem());
             JOptionPane.showMessageDialog(container, builder.toString(), "Votre choix de configuration", JOptionPane.PLAIN_MESSAGE);
         });
-        fillComboBox(ramComboBox, ramList);
-        fillComboBox(hddComboBox, hddList);
-        fillComboBox(screenComboBox, screenList);
-        fillComboBox(opticalComboBox, opticalList);
-        fillComboBox(burnerComboBox, burnerList);
+        fillComboBox(ramComboBox, RAM_LIST);
+        fillComboBox(hddComboBox, HDD_LIST);
+        fillComboBox(screenComboBox, SCREEN_LIST);
+        fillComboBox(opticalComboBox, OPTICAL_LIST);
+        fillComboBox(burnerComboBox, BURNER_LIST);
     }
 
-    public void fillComboBox(JComboBox comboBox, String[] list) {
-        for (Object o : list) {
+    public void fillComboBox(JComboBox<String> comboBox, String[] list) {
+        for (String o : list) {
             comboBox.addItem(o);
         }
     }
