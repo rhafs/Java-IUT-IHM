@@ -1,16 +1,15 @@
-package copier;
+package listage;
 
 import javax.swing.*;
-import java.util.ResourceBundle;
 
 /**
- * Created on 09/04/15.
+ * Created on 07/05/15.
  *
  * @author gaugendre
  */
-public class Copier extends JFrame {
-    public Copier() {
-        super(ResourceBundle.getBundle("copier/Copier").getString("plain.title"));
+public class Listage extends JFrame {
+    public Listage() {
+        super("Listage");
         this.setContentPane(new MainPanel(this).getMainPanel());
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.pack();
@@ -24,6 +23,6 @@ public class Copier extends JFrame {
         } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             e.printStackTrace(System.err);
         }
-        new Copier();
+        new Listage();
     }
 }

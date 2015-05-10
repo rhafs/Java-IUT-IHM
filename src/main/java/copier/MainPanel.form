@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="mainPanel" default-binding="true" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="630" height="402"/>
+      <xy x="20" y="20" width="531" height="402"/>
     </constraints>
     <properties>
       <visible value="true"/>
@@ -17,7 +17,7 @@
         <properties>
           <font name="Droid Sans" size="25"/>
           <icon value="copier/hotel1.jpg"/>
-          <text value="Hôtel méridien"/>
+          <text resource-bundle="copier/Copier" key="label.hotel"/>
         </properties>
       </component>
       <component id="269b2" class="javax.swing.JLabel">
@@ -27,7 +27,7 @@
         <properties>
           <font name="Droid Sans" size="18" style="0"/>
           <foreground color="-4507085"/>
-          <text value="Entrer une chaîne : "/>
+          <text resource-bundle="copier/Copier" key="label.input"/>
         </properties>
       </component>
       <component id="ef084" class="javax.swing.JTextField" binding="text1">
@@ -48,7 +48,7 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="18"/>
-          <text value="&amp;Copier"/>
+          <text resource-bundle="copier/Copier" key="button.copy"/>
         </properties>
       </component>
       <component id="fa2d4" class="javax.swing.JLabel">
@@ -58,7 +58,7 @@
         <properties>
           <font name="Droid Sans" size="18" style="0"/>
           <foreground color="-12436805"/>
-          <text value="Voici la chaîne :"/>
+          <text resource-bundle="copier/Copier" key="label.output"/>
         </properties>
       </component>
       <component id="6eb42" class="javax.swing.JTextField" binding="text2">
@@ -109,7 +109,7 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="18"/>
-          <text value="&amp;Fin"/>
+          <text resource-bundle="copier/Copier" key="button.end"/>
         </properties>
       </component>
     </children>

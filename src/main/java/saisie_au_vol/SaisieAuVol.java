@@ -1,22 +1,26 @@
-package copier;
+package saisie_au_vol;
 
 import javax.swing.*;
 import java.util.ResourceBundle;
 
 /**
- * Created on 09/04/15.
+ * Created on 04/05/15.
  *
  * @author gaugendre
  */
-public class Copier extends JFrame {
-    public Copier() {
-        super(ResourceBundle.getBundle("copier/Copier").getString("plain.title"));
-        this.setContentPane(new MainPanel(this).getMainPanel());
+public class SaisieAuVol extends JFrame {
+    private JPanel mainPanel;
+
+    public SaisieAuVol() {
+        super(ResourceBundle.getBundle("saisie_au_vol/SaisieAuVol").getString("plain.title"));
+        this.mainPanel = new MainPanel(this).getMainPanel();
+        this.setContentPane(mainPanel);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.pack();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
+
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(
@@ -24,6 +28,6 @@ public class Copier extends JFrame {
         } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             e.printStackTrace(System.err);
         }
-        new Copier();
+        new SaisieAuVol();
     }
 }

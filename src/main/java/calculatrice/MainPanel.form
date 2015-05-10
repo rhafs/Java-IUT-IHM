@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="7" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="494" height="177"/>
+      <xy x="20" y="20" width="399" height="177"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -14,7 +14,7 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="18"/>
-          <text value="Opérande 1"/>
+          <text resource-bundle="calculatrice/Calculatrice" key="label.op1"/>
         </properties>
       </component>
       <component id="bdce6" class="javax.swing.JLabel">
@@ -23,7 +23,7 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="18"/>
-          <text value="Opérande 2"/>
+          <text resource-bundle="calculatrice/Calculatrice" key="label.op2"/>
         </properties>
       </component>
       <component id="2d3e5" class="javax.swing.JTextField" binding="firstOpField">
@@ -48,7 +48,7 @@
         </constraints>
         <properties>
           <font name="Droid Sans" size="18"/>
-          <text value="Résultat"/>
+          <text resource-bundle="calculatrice/Calculatrice" key="label.result"/>
         </properties>
       </component>
       <component id="a7ac7" class="javax.swing.JTextField" binding="resField">
