@@ -21,7 +21,8 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Taper un caractère (ESC pour arrêter)"/>
+              <labelFor value="929c4"/>
+              <text value="&amp;Taper un caractère (ESC pour arrêter)"/>
             </properties>
           </component>
           <component id="929c4" class="javax.swing.JTextField" binding="inputField">
@@ -45,7 +46,8 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Caractère"/>
+                  <labelFor value="d72c6"/>
+                  <text value="&amp;Caractère"/>
                 </properties>
               </component>
               <scrollpane id="d72c6">
@@ -55,7 +57,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="bacb1" class="javax.swing.JList" binding="resultList">
+                  <component id="bacb1" class="javax.swing.JList" binding="resultList" custom-create="true">
                     <constraints/>
                     <properties>
                       <font name="Monospaced" size="14"/>
@@ -68,7 +70,8 @@
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Rang Décimal"/>
+                  <labelFor value="d72c6"/>
+                  <text value="Rang &amp;décimal"/>
                 </properties>
               </component>
               <component id="b467a" class="javax.swing.JLabel">
@@ -76,7 +79,8 @@
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Rang hexadécimal"/>
+                  <labelFor value="d72c6"/>
+                  <text value="Rang &amp;hexadécimal"/>
                 </properties>
               </component>
             </children>

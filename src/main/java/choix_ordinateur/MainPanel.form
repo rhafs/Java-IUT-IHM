@@ -30,7 +30,7 @@
                 </constraints>
                 <properties>
                   <selected value="true"/>
-                  <text value="Intel"/>
+                  <text value="&amp;Intel"/>
                 </properties>
               </component>
               <component id="9a232" class="javax.swing.JRadioButton" binding="amdRadio">
@@ -38,7 +38,7 @@
                   <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="AMD"/>
+                  <text value="&amp;AMD"/>
                 </properties>
               </component>
               <hspacer id="24cbd">
@@ -71,10 +71,11 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="RAM"/>
+                  <labelFor value="83f20"/>
+                  <text value="&amp;RAM"/>
                 </properties>
               </component>
-              <component id="83f20" class="javax.swing.JComboBox" binding="ramComboBox">
+              <component id="83f20" class="javax.swing.JComboBox" binding="ramComboBox" custom-create="true">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -85,7 +86,8 @@
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Disque dur"/>
+                  <labelFor value="ba06b"/>
+                  <text value="&amp;Disque dur"/>
                 </properties>
               </component>
               <component id="2ed4" class="javax.swing.JLabel">
@@ -93,7 +95,8 @@
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Ecran"/>
+                  <labelFor value="6f41c"/>
+                  <text value="&amp;Ecran"/>
                 </properties>
               </component>
               <component id="502f3" class="javax.swing.JLabel">
@@ -101,7 +104,8 @@
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Lecteur optique"/>
+                  <labelFor value="f91e2"/>
+                  <text value="&amp;Lecteur optique"/>
                 </properties>
               </component>
               <component id="5aac9" class="javax.swing.JLabel">
@@ -109,28 +113,29 @@
                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Graveur"/>
+                  <labelFor value="814f3"/>
+                  <text value="&amp;Graveur"/>
                 </properties>
               </component>
-              <component id="ba06b" class="javax.swing.JComboBox" binding="hddComboBox">
+              <component id="ba06b" class="javax.swing.JComboBox" binding="hddComboBox" custom-create="true">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties/>
               </component>
-              <component id="6f41c" class="javax.swing.JComboBox" binding="screenComboBox">
+              <component id="6f41c" class="javax.swing.JComboBox" binding="screenComboBox" custom-create="true">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties/>
               </component>
-              <component id="f91e2" class="javax.swing.JComboBox" binding="opticalComboBox">
+              <component id="f91e2" class="javax.swing.JComboBox" binding="opticalComboBox" custom-create="true">
                 <constraints>
                   <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties/>
               </component>
-              <component id="814f3" class="javax.swing.JComboBox" binding="burnerComboBox">
+              <component id="814f3" class="javax.swing.JComboBox" binding="burnerComboBox" custom-create="true">
                 <constraints>
                   <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -143,7 +148,7 @@
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Lancer"/>
+              <text value="La&amp;ncer"/>
             </properties>
           </component>
         </children>
