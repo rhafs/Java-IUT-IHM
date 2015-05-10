@@ -16,7 +16,7 @@ import java.awt.event.KeyEvent;
  */
 public class MainPanel {
     private JPanel mainPanel;
-    private JList resultList;
+    private JList<String> resultList;
     private JTextField inputField;
     private JFrame container;
     private DefaultListModel<String> listModel;
