@@ -24,7 +24,7 @@ def jarPackage(artifactName, artifactVersion, artifactClass) {
     if (artifactVersion == "" || artifactVersion == null)
         artifactVersion = "1.0.0"
 
-    return tasks.create("jar${artifactName}", Jar) {
+    return tasks.create("jar_${artifactName}", Jar) {
         baseName = artifactName
         version = artifactVersion
         String className
@@ -43,6 +43,9 @@ def jarPackage(artifactName, artifactVersion, artifactClass) {
                 it.isDirectory() ? it : zipTree(it)
             }
         }
+
+//        For sources :
+//        from sourceSets.main.allSource
 
         manifest {
             attributes "Implementation-Title": "$className",
