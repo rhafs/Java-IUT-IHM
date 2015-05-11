@@ -63,5 +63,5 @@ def jarPackage(artifactName) {
 artifacts {
     archives jarPackage("aleatoire"), jarPackage("calculatrice", "1.2.3"), jarPackage("copier"),
             jarPackage("qcm"), jarPackage("ascii"), jarPackage("choix_ordinateur", "1.0.0", "ChoixOrdinateur"),
-            jarPackage("listage"), jarPackage("saisie_au_vol", "1.0.0", "SaisieAuVol"), jarPackage("passage_arg", "1.0.0", "PassageArguments")
+            jarPackage("listage"), jarPackage("saisie_au_vol", "1.0.0", "SaisieAuVol"), jarPackage("passage_arg", "1.0.0", "PassageArgs")
 }
