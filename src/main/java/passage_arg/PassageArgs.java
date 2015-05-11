@@ -10,7 +10,7 @@ import javax.swing.*;
 public class PassageArgs extends JFrame {
     private String[] listeSports;
     public PassageArgs() {
-        super("Listage");
+        super("Passage d'arguments");
         this.setContentPane(new MainPanel(this).getMainPanel());
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.pack();
