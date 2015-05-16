@@ -6,8 +6,7 @@ import com.intellij.uiDesigner.core.Spacer;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * Created on 09/04/15.
@@ -28,6 +27,7 @@ public class MainPanel {
     private double op1 = 0;
     private double op2 = 0;
     private boolean ok = true;
+    private static ArrayList<String> ALLOWED_OPERATORS = new ArrayList<>(Arrays.asList(new String[]{"+", "-", "x", "/", "*"}));
 
     public MainPanel(JFrame container) {
         this.container = container;
@@ -39,19 +39,18 @@ public class MainPanel {
     }
 
     public void readAndValidate() {
+        ok = true;
         try {
             op1 = Double.parseDouble(firstOpField.getText());
-            ok = true;
         } catch (NumberFormatException nfe) {
+            firstOpField.setText("???");
             firstOpField.selectAll();
             firstOpField.requestFocus();
-            firstOpField.setText("???");
             resField.setText(" ");
             ok = false;
         }
         try {
             op2 = Double.parseDouble(secOpField.getText());
-            ok = true;
         } catch (NumberFormatException nfe) {
             secOpField.setText("???");
             if (ok) {
@@ -74,12 +73,7 @@ public class MainPanel {
     }
 
     public boolean setOpLabel(String newOp) {
-        ArrayList<String> opList = new ArrayList<>(4);
-        opList.add("+");
-        opList.add("-");
-        opList.add("x");
-        opList.add("/");
-        if (opList.contains(newOp)) {
+        if (ALLOWED_OPERATORS.contains(newOp)) {
             opLabel.setText(newOp);
             return true;
         }
