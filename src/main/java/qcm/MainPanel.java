@@ -65,6 +65,7 @@ public class MainPanel {
         questions = new JPanel();
         questions.setLayout(new GridLayoutManager(3, 1, new Insets(0, 0, 0, 0), -1, -1));
         mainPanel.add(questions, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+        questions.setBorder(BorderFactory.createTitledBorder(ResourceBundle.getBundle("qcm/Qcm").getString("label.questions")));
         first = new JCheckBox();
         this.$$$loadButtonText$$$(first, ResourceBundle.getBundle("qcm/Qcm").getString("label.answer1"));
         questions.add(first, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
