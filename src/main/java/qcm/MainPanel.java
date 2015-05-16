@@ -27,7 +27,7 @@ public class MainPanel {
     public MainPanel(JFrame container) {
         this.container = container;
         okButton.addActionListener(e -> {
-            if (first.isSelected() && second.isSelected()) {
+            if (first.isSelected() && second.isSelected() && !third.isSelected()) {
                 JOptionPane.showMessageDialog(container, "Bravo !", "Verdict", JOptionPane.PLAIN_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(container, "Réponse incorrecte...", "Verdict", JOptionPane.ERROR_MESSAGE);
