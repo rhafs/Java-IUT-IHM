@@ -2,6 +2,7 @@ package notes;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import org.apache.commons.lang3.SystemUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -41,19 +42,31 @@ public class MainPanel {
         this.container = container;
         this.ok = false;
         selectFileButton.addActionListener(e -> {
-            FileDialog fd = new FileDialog(container, "Choisissez un fichier", FileDialog.LOAD);
-            fd.setLocationRelativeTo(container);
-            fd.setVisible(true);
+            if (SystemUtils.IS_OS_WINDOWS) {
+                JFileChooser fc = new JFileChooser();
+                int retVal = fc.showOpenDialog(container);
 
-            String fileName = fd.getFile();
-            String directoryName = fd.getDirectory();
-
-            if (fileName != null) {
-                notesFile = new File(directoryName + fileName);
-                ok = true;
+                if (retVal == JFileChooser.APPROVE_OPTION) {
+                    notesFile = fc.getSelectedFile();
+                } else {
+                    System.err.println("Erreur dans la sélection du fichier.");
+                    ok = false;
+                }
             } else {
-                System.err.println("Erreur dans la sélection du fichier.");
-                ok = false;
+                FileDialog fd = new FileDialog(container, "Choisissez un fichier", FileDialog.LOAD);
+                fd.setLocationRelativeTo(container);
+                fd.setVisible(true);
+
+                String fileName = fd.getFile();
+                String directoryName = fd.getDirectory();
+
+                if (fileName != null) {
+                    notesFile = new File(directoryName + fileName);
+                    ok = true;
+                } else {
+                    System.err.println("Erreur dans la sélection du fichier.");
+                    ok = false;
+                }
             }
             if (ok) {
                 try {

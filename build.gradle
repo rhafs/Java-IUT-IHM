@@ -16,8 +16,8 @@ allprojects {
 */
 
 dependencies {
-    compile "com.intellij:forms_rt:7.0.3"
-    runtime "com.intellij:forms_rt:7.0.3"
+    compile "com.intellij:forms_rt:7.0.3", 'org.apache.commons:commons-lang3:3.4'
+    runtime "com.intellij:forms_rt:7.0.3", 'org.apache.commons:commons-lang3:3.4'
 }
 
 def jarPackage(artifactName, artifactVersion, artifactClass) {
