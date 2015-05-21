@@ -81,7 +81,7 @@ public class MainPanel {
                 try {
                     Desktop.getDesktop().edit(notesFile);
                 } catch (IOException e1) {
-                    e1.printStackTrace();
+                    e1.printStackTrace(System.err);
                 }
             } else {
                 JOptionPane.showMessageDialog(container, "This action is not yet supported on your system.",
